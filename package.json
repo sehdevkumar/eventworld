@@ -17,6 +17,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@kinde-oss/kinde-auth-nextjs": "^2.2.10",
     "@prisma/client": "^5.10.2",
     "@t3-oss/env-nextjs": "^0.10.1",
     "framer-motion": "^11.2.6",
