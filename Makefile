@@ -19,7 +19,7 @@ NODE_VERSION=18
 NEXT_VERSION=14.2.1
 
 # Load environment variables from .env file
-include .env.example
+include .env.local
 
 # Targets
 .PHONY: ip run build rmn i test lint dc-up dc-down
@@ -30,7 +30,7 @@ ip:
 
 #! Next.js Commands
 run:
-	@npm run dev -- -H $(call get_ip) -p 3001
+	@npm run dev -- -H $(SERVER_IP) -p $(SERVER_PORT)
 
 build:
 	@npm run build

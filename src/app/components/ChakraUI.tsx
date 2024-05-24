@@ -1,7 +1,23 @@
 "use client";
 
-import { Button } from "@chakra-ui/react";
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Textarea,
+  Highlight,
+  Heading,
+  Image
+} from "@chakra-ui/react";
 
 export {
-    Button
+    Button,
+    Input,
+    FormControl,
+    FormLabel,
+    Textarea,
+    Highlight,
+    Heading,
+    Image
 }

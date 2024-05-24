@@ -10,11 +10,14 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
+model CreateEvents {
     id        Int      @id @default(autoincrement())
-    name      String
+    event      String
+    desc       String
+    file       String
+    location   String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-    @@index([name])
+   
+    @@index([event])
 }

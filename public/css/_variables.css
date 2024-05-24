@@ -1,13 +1,18 @@
 :root {
 
-   --app-bg-color: #FFFFFF;      
-   
-   /* Navbar */
-   --nav-bg:#FFFFFF;
-   --nav-height:60px;
+  --app-bg-color: #FFFFFF;
 
-     /* Footer */
-     --footer-bg:#FFFFFF;
-     --footer-height:60px;
-   
+  /* Navbar */
+  --nav-bg: #FFFFFF;
+  --nav-height: 60px;
+
+  /* Footer */
+  --footer-bg: #FFFFFF;
+  --footer-height: 60px;
+
+  /* Buttons */
+  --btn-submit-bg: #0eff22;
+  --btn-cancel-bg:#D7D7D7;
+  --btn-text-clr: #191919;
+
 }
