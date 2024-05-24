@@ -47,7 +47,7 @@ const CreateEventPage = () => {
         </Highlight>
       </Heading>
       <form action={action} ref={formRef}>
-        <div className="flex h-max w-full min-w-[500px] flex-col justify-center gap-y-[10px] rounded-md p-[20px] shadow-md shadow-slate-200">
+        <div className="flex h-max w-full md:min-w-[400px] lg:min-w-[500px] sm:min-w-[200px] flex-col justify-center gap-y-[10px] rounded-md p-[20px] shadow-md shadow-slate-200">
           <p className="text-[24px]">Create Event</p>
           <div>
             <FormControl isRequired>

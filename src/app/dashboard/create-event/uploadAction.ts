@@ -14,11 +14,9 @@ const UploadAction = async (prevState: FromIniialState, formData: FormData)=> {
     const location = formData.get('location');
     
     const file = formData.get('upload_file') as File;
-    const arrayBuffer = await file.arrayBuffer();
-    const buffer = new Uint8Array(arrayBuffer);
+    
     const filePath = `./public/uploads/${file?.name}`
 
-    
     await fetch(apiUrl,{
         method: 'POST',
         headers: {
@@ -31,13 +29,13 @@ const UploadAction = async (prevState: FromIniialState, formData: FormData)=> {
             location: location
         })
     }).then(async ()=> {
-         
 
+        const arrayBuffer = await file.arrayBuffer();
+        const buffer = new Uint8Array(arrayBuffer);
         await fs.writeFile(filePath, buffer);
-    })
-    
-    formData.delete('event')
 
+    })
+ 
     return {
         message: "Form Successfully"
     }

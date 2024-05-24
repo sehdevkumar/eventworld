@@ -1,14 +1,24 @@
 import { Badge, Box, Flex , Image , Text } from "@chakra-ui/react";
+import { DeleteIcon, EditIcon } from "~/app/components/ChakraIcons";
 import { type CreateEventRes } from "~/app/typings/api-typings";
 
-const EventCard = ({ eventData }: { eventData: CreateEventRes }) => {
+const EventCard = async ({ eventData }: { eventData: CreateEventRes }) => {
    return (
      <div
-     className="shadow-sm shadow-slate-200 rounded-sm p-[10px]"
+     className="shadow-sm shadow-slate-200 h-max rounded-sm p-[10px]"
      >
-       <Image objectFit={'contain'} aspectRatio={16/9} width={'100%'} height={'100px'} src={eventData.file.replace('./public','')} alt={`${eventData.event} image`} />
+       <Image objectFit={'contain'} aspectRatio={16/9} width={'100%'} height={'150px'} src={eventData.file.replace('./public','')} alt={`${eventData.event} image`} />
 
-       <Box p="6">
+       <Box className='relative'>
+        <div
+        className="flex gap-x-[10px] absolute right-0"
+
+        >
+        <DeleteIcon cursor={'pointer'} />
+        <EditIcon  cursor={'pointer'}/>
+
+        </div>
+
          <Box display="flex" alignItems="baseline">
            <Badge borderRadius="full" px="2" colorScheme="teal">
              New

@@ -15,7 +15,7 @@ const NavBarPage = ()=> {
             
             <div >
                 <Link href={DashboardPathEnum.HOME}>
-                  Name
+                  EventWorld
                 </Link>
             </div>
             <div className="flex gap-x-[10px]">

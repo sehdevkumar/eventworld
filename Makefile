@@ -19,7 +19,7 @@ NODE_VERSION=18
 NEXT_VERSION=14.2.1
 
 # Load environment variables from .env file
-include .env.local
+include .env
 
 # Targets
 .PHONY: ip run build rmn i test lint dc-up dc-down
