@@ -3,13 +3,10 @@ import { type CreateEventRes } from "~/app/typings/api-typings";
 
 const EventCard = ({ eventData }: { eventData: CreateEventRes }) => {
    return (
-     <Box
-       maxW={'lg'}
-       borderWidth="1px"
-       borderRadius="lg"
-       className="m-4 shadow-lg"
+     <div
+     className="shadow-sm shadow-slate-200 rounded-sm p-[10px]"
      >
-       <Image src={eventData.file.replace('./public','')} alt={`${eventData.event} image`} />
+       <Image objectFit={'contain'} aspectRatio={16/9} width={'100%'} height={'100px'} src={eventData.file.replace('./public','')} alt={`${eventData.event} image`} />
 
        <Box p="6">
          <Box display="flex" alignItems="baseline">
@@ -53,7 +50,7 @@ const EventCard = ({ eventData }: { eventData: CreateEventRes }) => {
            </Text>
          </Flex>
        </Box>
-     </Box>
+     </div>
    );
 };
 

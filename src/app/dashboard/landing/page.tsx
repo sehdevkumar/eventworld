@@ -18,7 +18,7 @@ const LandingPage = async ()=> {
 
     return  (
        
-        <div className="grid overflow-auto h-full w-full grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
+        <div className="grid overflow-auto h-full w-full gap-[20px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
            {
             events?.map((evt)=> {
                return <>
