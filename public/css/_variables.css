@@ -1,5 +1,13 @@
 :root {
 
-   --app-bg-color: #FFFFFF;        
+   --app-bg-color: #FFFFFF;      
+   
+   /* Navbar */
+   --nav-bg:#FFFFFF;
+   --nav-height:60px;
+
+     /* Footer */
+     --footer-bg:#FFFFFF;
+     --footer-height:60px;
    
 }
