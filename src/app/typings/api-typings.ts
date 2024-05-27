@@ -3,6 +3,7 @@ export type CreateEventReq = {
   file: string,
   desc: string,
   location:string
+  assetId:string
 }
 
 export type CreateEventRes = {

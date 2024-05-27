@@ -7,10 +7,10 @@ import { PrismaClient } from "@prisma/client"
 import React from "react"
 import EventCard from "./EventCard";
 import { type CreateEventRes } from "~/app/typings/api-typings";
-import { Heading } from "@chakra-ui/react";
+import { Heading } from "~/app/components/ChakraUI";
+
 
 const prisma  = new PrismaClient()
-
 const LandingPage = async ()=> {
 
       

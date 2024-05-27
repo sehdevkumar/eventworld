@@ -4,6 +4,7 @@ CREATE TABLE "CreateEvents" (
     "event" TEXT NOT NULL,
     "desc" TEXT NOT NULL,
     "file" TEXT NOT NULL,
+    "assetId" TEXT NOT NULL,
     "location" TEXT NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL

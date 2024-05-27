@@ -15,6 +15,7 @@ model CreateEvents {
     event      String
     desc       String
     file       String
+    assetId    String
     location   String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt

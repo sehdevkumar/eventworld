@@ -1,23 +1,19 @@
+"use server";
+
 import { Badge, Box, Flex , Image , Text } from "@chakra-ui/react";
 import { DeleteIcon, EditIcon } from "~/app/components/ChakraIcons";
 import { type CreateEventRes } from "~/app/typings/api-typings";
+import EventCardAction from "./EventCardAction";
 
 const EventCard = async ({ eventData }: { eventData: CreateEventRes }) => {
    return (
      <div
      className="shadow-sm shadow-slate-200 h-max rounded-sm p-[10px]"
      >
-       <Image objectFit={'contain'} aspectRatio={16/9} width={'100%'} height={'150px'} src={eventData.file.replace('./public','')} alt={`${eventData.event} image`} />
+       <Image objectFit={'contain'} aspectRatio={16/9} width={'100%'} height={'150px'} src={eventData.file} alt={`${eventData.event} image`} />
 
        <Box className='relative'>
-        <div
-        className="flex gap-x-[10px] absolute right-0"
-
-        >
-        <DeleteIcon cursor={'pointer'} />
-        <EditIcon  cursor={'pointer'}/>
-
-        </div>
+         <EventCardAction  cardId={eventData?.id}/>
 
          <Box display="flex" alignItems="baseline">
            <Badge borderRadius="full" px="2" colorScheme="teal">
@@ -56,7 +52,7 @@ const EventCard = async ({ eventData }: { eventData: CreateEventRes }) => {
              Created at: {new Date(eventData.createdAt).toLocaleDateString()}
            </Text>
            <Text fontSize="sm" className="text-gray-500">
-             Uploaded at: {new Date(eventData.uploadedAt).toLocaleDateString()}
+             Uploaded at: {new Date(eventData?.uploadedAt ?? new Date()).toLocaleDateString()}
            </Text>
          </Flex>
        </Box>

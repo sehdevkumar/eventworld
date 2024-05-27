@@ -1,12 +1,14 @@
 "use server";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
-import fs from "node:fs/promises";
+
+import { uploadImage } from "~/app/utils/upload.util";
+
 export interface FromIniialState {
     message:string;
 }
 
 const UploadAction = async (prevState: FromIniialState, formData: FormData)=> {
+
+
 
     const apiUrl = `http://${process.env.SERVER_IP}:${process.env.SERVER_PORT}/api/event`;
     const event = formData.get('event');
@@ -15,7 +17,15 @@ const UploadAction = async (prevState: FromIniialState, formData: FormData)=> {
     
     const file = formData.get('upload_file') as File;
     
-    const filePath = `./public/uploads/${file?.name}`
+    const fileName = file?.name;
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = new Uint8Array(arrayBuffer);
+
+
+     const uploadResult = await uploadImage(buffer, fileName) as any;
+
+     console.log(uploadResult)
+      
 
     await fetch(apiUrl,{
         method: 'POST',
@@ -24,16 +34,14 @@ const UploadAction = async (prevState: FromIniialState, formData: FormData)=> {
         },
         body : JSON.stringify({
             event: event,
-            file: filePath,
+            file: uploadResult?.url,
+            assetId:uploadResult?.public_id,
             desc: desc,
             location: location
         })
     }).then(async ()=> {
 
-        const arrayBuffer = await file.arrayBuffer();
-        const buffer = new Uint8Array(arrayBuffer);
-        await fs.writeFile(filePath, buffer);
-
+      
     })
  
     return {
