@@ -15,6 +15,8 @@ const NavBarPage =  ()=> {
      router.refresh()
   }
 
+  
+
     return (
       <div className="flex h-[var(--nav-height)] w-full items-center justify-between bg-[var(--nav-bg)] px-[10px] shadow-sm shadow-slate-200">
         <div>

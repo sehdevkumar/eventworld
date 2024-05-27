@@ -9,11 +9,11 @@ import { Heading } from "~/app/components/ChakraUI";
 
 const prisma  = new PrismaClient()
 const LandingPage = async ()=> {
-
-   console.log("I have to run everytime")
+    
 
     const events = await prisma.createEvents.findMany() as unknown as CreateEventRes[];
      
+
 
     return  (
        
