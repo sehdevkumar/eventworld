@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 "use server";
 
 import { PrismaClient } from "@prisma/client"
@@ -13,7 +10,7 @@ import { Heading } from "~/app/components/ChakraUI";
 const prisma  = new PrismaClient()
 const LandingPage = async ()=> {
 
-      
+   console.log("I have to run everytime")
 
     const events = await prisma.createEvents.findMany() as unknown as CreateEventRes[];
      

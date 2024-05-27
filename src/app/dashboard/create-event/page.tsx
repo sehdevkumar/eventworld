@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 "use client"
 import {
   Button,
@@ -12,22 +13,27 @@ import {
 import UploadAction from "./uploadAction";
 import { useFormState } from "react-dom";
 import { useEffect, useRef, useState } from "react";
+import Loading from "../loading";
 const initialState = {
   message: "",
 };
 
 const CreateEventPage = () => {
-  const fileRef = useRef<HTMLInputElement>(null);
-  const [imageSrc, setImageSrc] = useState<string>(null);
+  const fileRef = useRef<any>();
+  const [imageSrc, setImageSrc] = useState<string | ArrayBuffer | null>(null);
   const [fromState, action] = useFormState(UploadAction, initialState);
   const formRef = useRef<HTMLFormElement>(null);
+  const [isLoading,setLoading] = useState<boolean>(false);
 
 
   const onFileHandlerChanged = ()=> {
-    const file = fileRef?.current?.files[0];
+    setLoading(true)
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const file: File | null = fileRef?.current?.files?.[0] ?? null
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
+        setLoading(false);
         setImageSrc(reader?.result);
       };
       reader.readAsDataURL(file);
@@ -36,10 +42,15 @@ const CreateEventPage = () => {
 
   useEffect(()=> {
     formRef.current?.reset()
+    setLoading(false)
     setImageSrc('');
   }, [fromState])
 
   return (
+    <>
+    {
+      isLoading && <Loading />
+    }
     <div className="grid h-full  justify-center overflow-auto">
       <Heading as={"h2"} size={"md"}>
         <Highlight query="Live" styles={{ px: "2", py: "2", bg: "red.300" }}>
@@ -95,13 +106,14 @@ const CreateEventPage = () => {
           </div>
 
           <div>
-            <Button bg={"var(--btn-submit-bg)"} type="submit">
+            <Button bg={"var(--btn-submit-bg)"} onClick={()=> setLoading(true)} type="submit">
               Create
             </Button>
           </div>
         </div>
       </form>
     </div>
+    </>
   );
 };
 

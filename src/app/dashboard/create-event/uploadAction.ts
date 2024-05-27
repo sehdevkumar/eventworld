@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use server";
 
 import { uploadImage } from "~/app/utils/upload.util";
@@ -22,9 +24,9 @@ const UploadAction = async (prevState: FromIniialState, formData: FormData)=> {
     const buffer = new Uint8Array(arrayBuffer);
 
 
+     // eslint-disable-next-line @typescript-eslint/no-explicit-any
      const uploadResult = await uploadImage(buffer, fileName) as any;
 
-     console.log(uploadResult)
       
 
     await fetch(apiUrl,{
@@ -39,9 +41,6 @@ const UploadAction = async (prevState: FromIniialState, formData: FormData)=> {
             desc: desc,
             location: location
         })
-    }).then(async ()=> {
-
-      
     })
  
     return {

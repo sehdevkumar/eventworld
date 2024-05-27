@@ -1,63 +1,55 @@
-"use client"
+"use client";
 
-import AlertDialog from "~/app/components/DialogBox"
-import { DeleteIcon, EditIcon } from "~/app/components/ChakraIcons"
-import DialogBox from "~/app/components/DialogBox"
-import { useRef } from "react"
+import { DeleteIcon, EditIcon } from "~/app/components/ChakraIcons";
+import DialogBox from "~/app/components/DialogBox";
+import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
-const EventCardAction = ({cardId}: {cardId:number})=> {
+const EventCardAction = ({ cardId }: { cardId: number }) => {
+  const apiUrl = `/api/event`;
+  const router = useRouter();
 
-    const apiUrl = `/api/event`;
+  const dialogRef = useRef<any>();
 
+  const handleEventDeletion = () => {
+    dialogRef.current.open();
+  };
 
-    const dialogRef = useRef<any>();
+  const handleEventEdit = () => {
+     console.log("Me clicked")
+  };
 
-    const handleEventDeletion = ()=> {
-        dialogRef.current.open();
-    }
+  const onDialogCloseHandler = async () => {
+   await fetch(apiUrl, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: cardId,
+      }),
+    }).then(async () => {
+      dialogRef?.current?.close();
+      router.refresh()
+    });
+  };
 
-    const handleEventEdit = ()=> {
-        
-    }
+  return (
+    <>
+      <div className="absolute right-0 flex gap-x-[10px]">
+        <DeleteIcon onClick={handleEventDeletion} cursor={"pointer"} />
+        <EditIcon onClick={handleEventEdit} cursor={"pointer"} />
+      </div>
+      <DialogBox
+        onClose={onDialogCloseHandler}
+        ref={dialogRef}
+        isCancelButton={true}
+        isOkButton={true}
+        body="Are you sure to delete?"
+        title="Confirmation"
+      />
+    </>
+  );
+};
 
-    const onDialogCloseHandler = ()=> {
-         
-        fetch(apiUrl,{
-        method: 'DELETE',
-        headers: {
-           'Content-Type': 'application/json',
-        },
-        body : JSON.stringify({
-            id: cardId,
-        })
-    }).then(async ()=> {
-        
-        dialogRef.current.close()
-    })
-
-    }
-
-   
-    return  (
-         
-        <>
-        <div
-        className="flex gap-x-[10px] absolute right-0"
-
-        >
-        
-        <DeleteIcon onClick={handleEventDeletion} cursor={'pointer'} />
-        <EditIcon  onClick={handleEventEdit} cursor={'pointer'}/>
-
-        </div>
-        <DialogBox onClose={onDialogCloseHandler} ref={dialogRef} isCancelButton={true} isOkButton={true} body='Are you sure to delete?' title='Confirmation'/>
-        </>
-
-
-
-
-    )
-
-}
-
-export default EventCardAction
+export default EventCardAction;

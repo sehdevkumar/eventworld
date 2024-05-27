@@ -29,6 +29,11 @@ const config = {
       }
     ],
     "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/no-unsafe-call":"off",
+    "@typescript-eslint/no-unsafe-member-access":"off",
+    "@typescript-eslint/no-explicit-any":"off",
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
+    "@typescript-eslint/no-base-to-string":"off",
     "@typescript-eslint/no-misused-promises": [
       "error",
       {

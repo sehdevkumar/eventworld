@@ -1,7 +1,6 @@
 "use server";
 
 import { Badge, Box, Flex , Image , Text } from "@chakra-ui/react";
-import { DeleteIcon, EditIcon } from "~/app/components/ChakraIcons";
 import { type CreateEventRes } from "~/app/typings/api-typings";
 import EventCardAction from "./EventCardAction";
 
