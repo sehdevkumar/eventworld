@@ -7,7 +7,7 @@ import EventCardAction from "./EventCardAction";
 const EventCard = async ({ eventData }: { eventData: CreateEventRes }) => {
    return (
      <div
-     className="shadow-sm shadow-slate-200 h-max rounded-sm p-[10px]"
+     className="shadow-md shadow-slate-400 h-[max(400px)] rounded-md p-[10px]"
      >
        <Image objectFit={'contain'} aspectRatio={16/9} width={'100%'} height={'150px'} src={eventData.file} alt={`${eventData.event} image`} />
 

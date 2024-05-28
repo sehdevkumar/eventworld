@@ -21,12 +21,14 @@ const LandingPage = async ()=> {
 
        <Heading>Connect, Collaborate, Create: Tech Events Portal</Heading>
        
-        <div className="grid overflow-auto md:grid-cols-3 h-max w-full gap-[20px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+        <div className="grid overflow-auto md:grid-cols-3 h-max min-h-[600px] w-full gap-[20px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
            {
             events?.map((evt)=> {
-               return <>
+               return ( 
+                 <div key={evt.id} className="pl-[20px] overflow-hidden">
                  <EventCard eventData={evt}/>
-               </>;
+               </div>
+               );
 
             })
            }
