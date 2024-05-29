@@ -57,7 +57,8 @@ const CreateEventPage = () => {
           A Journey Through Dynamic Live Events
         </Highlight>
       </Heading>
-      <Image src="/images/create_event.jpg" alt="create event"/>
+      <div className="flex flex-1 gap-4 w-full mobile:flex-col desktop:flex-row tablet:flex-row large-screen:flex-row">
+      <Image width={'100%'} height={'80%'} aspectRatio={4 / 3} objectFit={'cover'} src="/images/create_event.jpg" alt="create event"/>
       <form action={action} ref={formRef}>
         <div className="flex h-max w-full md:min-w-[400px] lg:min-w-[500px] sm:min-w-[200px] flex-col justify-center gap-y-[10px] rounded-md p-[20px] shadow-md shadow-slate-200">
           <p className="text-[24px]">Create Event</p>
@@ -113,6 +114,8 @@ const CreateEventPage = () => {
           </div>
         </div>
       </form>
+
+      </div>
     </div>
     </>
   );

@@ -9,6 +9,14 @@ export default {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
     },
+     screens: {
+      'mobile': '320px',
+      'tablet': '640px',
+      'laptop': '1024px',
+      'desktop': '1280px',
+      'large-screen': '1920px',
+      'slide-radius':'1px solid red'
+    },
   },
   plugins: [],
 } satisfies Config;
