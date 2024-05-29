@@ -2,8 +2,9 @@
 
 import NavActionsComponet from "./NavbarAction"
 import { DashboardPathEnum } from "../typings/platform"
-import { Button } from "./ChakraUI";
 import { useRouter } from "next/navigation";
+import { Button } from "../components/ChakraUI";
+import MenuBar from "./Menubar";
 
 
 const NavBarPage =  ()=> {    
@@ -19,6 +20,9 @@ const NavBarPage =  ()=> {
 
     return (
       <div className="flex flex-1 h-[var(--nav-height)] w-full items-center justify-between bg-[var(--nav-bg)] px-[10px] shadow-sm shadow-slate-200">
+        <div>
+          <MenuBar/>
+        </div>
         <div>
           <Button bg={"transparent"} onClick={handleNavigation}>
             EventWorld

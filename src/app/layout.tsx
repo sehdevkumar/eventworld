@@ -2,8 +2,8 @@ import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { Providers } from "./providers";
-import NavBarPage from "./components/Navbar";
-import FooterPage from "./components/Footer";
+import FooterPage from "./layout/Footer";
+import NavBarPage from "./layout/Navbar";
 
 export const metadata = {
   title: "EventWorld",

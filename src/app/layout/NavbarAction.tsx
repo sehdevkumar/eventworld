@@ -1,8 +1,8 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { Button } from "./ChakraUI"
 import { DashboardPathEnum } from "../typings/platform"
+import { Button } from "../components/ChakraUI"
 
 const NavActionsComponet = ()=> {
     
