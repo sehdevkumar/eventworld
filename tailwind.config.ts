@@ -10,7 +10,7 @@ export default {
       },
     },
      screens: {
-      'mobile': '320px',
+      'mobile': 'max(320px,400px)',
       'tablet': '640px',
       'laptop': '1024px',
       'desktop': '1280px',
