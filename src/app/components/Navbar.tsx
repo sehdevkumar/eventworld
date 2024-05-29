@@ -18,7 +18,7 @@ const NavBarPage =  ()=> {
   
 
     return (
-      <div className="flex h-[var(--nav-height)] w-full items-center justify-between bg-[var(--nav-bg)] px-[10px] shadow-sm shadow-slate-200">
+      <div className="flex flex-1 h-[var(--nav-height)] w-full items-center justify-between bg-[var(--nav-bg)] px-[10px] shadow-sm shadow-slate-200">
         <div>
           <Button bg={"transparent"} onClick={handleNavigation}>
             EventWorld

@@ -3,18 +3,10 @@ import LandingPage from "./landing/page"
 
 export const dynamic = 'force-dynamic';
 
-const DashboardPage = async ()=> {
-
-    
-    //  await new Promise(resolve => setTimeout((resolve) , 6000))
-   
+const DashboardPage = async ()=> {   
 
     return  (
-       
-        <div>
-           <LandingPage/>
-        </div>
-
+        <LandingPage/>
     )
 
 }

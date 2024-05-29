@@ -1,4 +1,4 @@
-@import '/css/_exporter.css';
+@import '../../public/css/_exporter.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
