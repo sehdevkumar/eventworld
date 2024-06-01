@@ -18,7 +18,9 @@ const initialState = {
   message: "",
 };
 
-const CreateEventPage = () => {
+const CreateEventPage =  () => {
+
+
   const fileRef = useRef<any>();
   const [imageSrc, setImageSrc] = useState<string | ArrayBuffer | null>(null);
   const [fromState, action] = useFormState(UploadAction, initialState);

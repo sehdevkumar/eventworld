@@ -14,7 +14,6 @@ const NavActionsComponet = ()=> {
 
     return <>
          <Button onClick={()=> onNavigation(DashboardPathEnum.CREATE_EVENT)}>Create Event</Button>
-         <Button onClick={()=> onNavigation(DashboardPathEnum.BOOK_EVENT)}>Book Event</Button>
     </>
 
 }

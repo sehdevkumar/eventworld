@@ -22,3 +22,21 @@ model CreateEvents {
    
     @@index([event])
 }
+
+
+
+model User {
+  id              String    @id
+  sessions        Session[]
+  firstName       String
+  lastName        String
+  email           String    @unique
+  hashedPassword  String
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  userId    String
+  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+}

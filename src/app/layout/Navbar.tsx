@@ -20,15 +20,15 @@ const NavBarPage =  ()=> {
 
     return (
       <div className="flex flex-1 h-[var(--nav-height)] w-full items-center justify-between bg-[var(--nav-bg)] px-[10px] shadow-sm shadow-slate-200">
-        <div>
+        <div className="mobile:block desktop:hidden tablet:hidden">
           <MenuBar/>
         </div>
-        <div>
+        <div className="flex justify-start">
           <Button bg={"transparent"} onClick={handleNavigation}>
             EventWorld
           </Button>
         </div>
-        <div className="flex gap-x-[10px]">
+        <div className="flex gap-x-[10px] mobile:hidden desktop:flex tablet:flex">
           <NavActionsComponet />
         </div>
       </div>

@@ -8,6 +8,9 @@ export default function Loading() {
   emptyColor='gray.200'
   color='blue.500'
   size='xl'
+  position={'absolute'}
+  left={"50%"}
+  top={"50%"}
   justifySelf={'center'}
 />
 }
