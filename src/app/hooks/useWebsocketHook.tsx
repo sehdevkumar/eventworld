@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { io } from "socket.io-client";
-import { type WebsocketEventEnum } from "~/pages/api/api-typings";
+import { WebsocketEventEnum } from "../typings/platform";
 
 const useWebSocketConnectionHook = (cb:(arg:unknown)=>void,event:WebsocketEventEnum)=> {
 

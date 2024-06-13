@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect, useRef, useCallback } from 'react'
-import { Input, InputGroup, InputLeftElement } from './ChakraUI'
-import { SearchIcon } from './Icons'
 import { useRouter } from 'next/navigation'
+import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
+import { SearchIcon } from '@chakra-ui/icons'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useDebouncedCallback = (func: (...args: any) => void, wait: number) => {

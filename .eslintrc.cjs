@@ -34,6 +34,8 @@ const config = {
     "@typescript-eslint/no-explicit-any":"off",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/no-base-to-string":"off",
+    "@typescript-eslint/no-unsafe-assignment":"off",
+    "@typescript-eslint/no-var-requires":"off",
     "@typescript-eslint/no-misused-promises": [
       "error",
       {
