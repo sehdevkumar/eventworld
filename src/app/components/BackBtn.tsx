@@ -1,16 +1,12 @@
 'use client'
+import { ArrowBackIcon } from '@chakra-ui/icons';
 import { useRouter } from 'next/navigation'
-import { ArrowBackIcon } from './Icons'
-import useCheckCargoLiveFromClient from '../(cargo-count)/cargo-utils/cargo-live-client';
 
 const GoBackBtn = ({ title, path }: { title: string; path: string }) => {
   const router = useRouter()
 
   const handleNavigation =  () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useCheckCargoLiveFromClient(()=> {
-      router.push(path)
-    })
+   router.push(path);
   }
 
   return (
