@@ -12,7 +12,7 @@ const UploadAction = async (prevState: FromIniialState, formData: FormData)=> {
 
 
 
-    const apiUrl = `http://${process.env.SERVER_IP}:${process.env.SERVER_PORT}/api/event`;
+    const apiUrl = `https://eventworld.onrender.com/api/event`;
     const event = formData.get('event');
     const desc = formData.get('description');
     const location = formData.get('location');
