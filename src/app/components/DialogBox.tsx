@@ -11,7 +11,7 @@ interface DialoadType {
     isCancelButton?:boolean,
     children?:React.ReactNode,
     body?:React.ReactNode,
-    onClose?:(arg: any)=>void
+    onClose:(arg: any)=>void
 }
 
 
